@@ -77,7 +77,16 @@
     });
 
     intervalInput.addEventListener('change', ()=>{ startTimer(); });
-
+ /* =========================
+       ANTI-INACTIVIDAD (LG)
+       Simula actividad cada
+       10 minutos
+    ========================== */
+    setInterval(() => {
+      window.dispatchEvent(new Event("mousemove"));
+      window.dispatchEvent(new Event("keydown"));
+    }, 10 * 60 * 1000);
+    
     // Inicio
     showIndex(0);
     startTimer();
@@ -89,5 +98,6 @@
   </script>
 </body>
 </html>
+
 
 
